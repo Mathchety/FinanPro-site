@@ -1,17 +1,20 @@
+import Image from "next/image";
+import logo from "./content/logo-finanpro.png";
+import tela from "./content/TelaHome.png";
+import reactlogo from "./content/react-native-logo-square.png";
+
 export default function Home() {
   return (
     <body>
       <div className="bg-blue-300">
         <div className="h-full ">
           <header className="flex px-56 h-20 py-2">
-            <div className="flex bg-blue-700 w-full rounded-lg bg-opacity-60  ">
-              <div className=" w-1/4 flex justify-center items-center  ">
-                <img
-                  src="https://i.seadn.io/gae/RC64Qbc-vI5edW8LsHK-LZ0rvMTmCWBepr3uti5Uzq2n3eCiQnaXqpgfLz8WvNRLOyM6MKRX-HTdyB939AVoBm4Rc92HrkGVKZ8G?auto=format&dpr=1&w=1000"
-                  alt=""
-                  className="w-20 "
-                />
-                <h1 className=" font-extrabold">FinanPro</h1>
+            <div className="flex bg-blue-700 w-full rounded-lg bg-opacity-60 h-auto  ">
+              <div className=" w-1/4 flex  items-center px-5 py-1 gap-2">
+                <Image src={logo} alt="FinanPro" className="h-full w-3/4" />
+                <h1 className="text-green-500 font-bold text-2xl w-1/4 ">
+                  FinanPro
+                </h1>
               </div>
               <div className=" flex-1 flex justify-center items-center ">
                 <nav className="flex space-x-8">
@@ -49,27 +52,64 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex-1 flex pl-4 justify-center items-center">
-              <img
-                src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-training-change-app-icon/img/e7a9b86b35f7d6c3.png?hl=pt-br"
-                alt=""
-                className="h-5/6"
-              />
+            <div className="flex-1 flex justify-center items-center bg-white rounded-lg bg-opacity-45 flex-col">
+              <Image src={tela} alt="TelaHome" className="h-4/5 w-3/5" />
+              <h1 className="font-bold text-2xl text-black">Tela inicial</h1>
             </div>
           </section>
           <section
             id="tecnologia"
             className="h-screen  px-56 py-5 flex justify-center space-x-4"
           >
-            <div className="bg-purple-500 w-full h-full py-4 items-center flex flex-col space-y-2 px-2 ">
-              <h1>Tecnologias</h1>
-              <div className="bg-red-500 w-full h-full grid grid-cols-3 gap-2 p-2">
-                <div className="bg-blue-700 p-4 text-center">ReactNative</div>
-                <div className="bg-blue-500 p-4 text-center">React</div>
-                <div className="bg-orange-500 p-4 text-center">JavaScript</div>
-                <div className="bg-blue-300 p-4 text-center">TypeScript</div>
-                <div className="bg-blue-500 p-4 text-center">TailWind CSS</div>
-                <div className="bg-gray-500 p-4 text-center">Expo</div>
+            <div className="bg-white rounded-lg bg-opacity-45 w-full h-full flex flex-col items-center pt-1">
+              <h1 className=" font-bold text-2xl text-black">Tecnologias</h1>
+              <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-2 box-border">
+                <div className="relative flex justify-center items-center flex-col">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center flex justify-center items-center "
+                    style={{
+                      backgroundImage: `url(${reactlogo.src})`,
+                      opacity: 0.2,
+                      position: "absolute",
+                    }}
+                  ></div>
+                  <h1 className="relative z-10 font-bold text-black text-xl">
+                    React Native
+                  </h1>
+                  <ol className="relative z-10">
+                    <ul className="text-black">
+                      Desenvolvimento do app mobile
+                    </ul>
+                  </ol>
+                </div>
+                <div className="relative flex justify-center items-center flex-col">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center flex justify-center items-center "
+                    style={{
+                      backgroundImage: `url(${reactlogo.src})`,
+                      opacity: 0.2,
+                      position: "absolute",
+                    }}
+                  ></div>
+                  <h1 className="relative z-10 font-bold text-black text-xl">
+                    React
+                  </h1>
+                  <ol className="relative z-10">
+                    <ul className="text-black">Desenvolvimento web</ul>
+                  </ol>
+                </div>
+                <div className="bg-orange-500  text-center flex justify-center items-center">
+                  JavaScript
+                </div>
+                <div className="bg-blue-300  text-center flex justify-center items-center">
+                  TypeScript
+                </div>
+                <div className="bg-blue-500  text-center flex justify-center items-center">
+                  TailWind CSS
+                </div>
+                <div className="bg-gray-500  text-center flex justify-center items-center">
+                  Expo
+                </div>
               </div>
             </div>
           </section>
